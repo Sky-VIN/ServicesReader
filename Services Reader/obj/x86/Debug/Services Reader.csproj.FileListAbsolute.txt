@@ -1,0 +1,8 @@
+D:\Programming\Projects\Microsoft\Visual Studio 2010\Projects\Services Reader\Services Reader\bin\Debug\Services Reader.exe.config
+D:\Programming\Projects\Microsoft\Visual Studio 2010\Projects\Services Reader\Services Reader\bin\Debug\Services Reader.exe
+D:\Programming\Projects\Microsoft\Visual Studio 2010\Projects\Services Reader\Services Reader\bin\Debug\Services Reader.pdb
+D:\Programming\Projects\Microsoft\Visual Studio 2010\Projects\Services Reader\Services Reader\obj\x86\Debug\Services_Reader.MainForm.resources
+D:\Programming\Projects\Microsoft\Visual Studio 2010\Projects\Services Reader\Services Reader\obj\x86\Debug\Services_Reader.Properties.Resources.resources
+D:\Programming\Projects\Microsoft\Visual Studio 2010\Projects\Services Reader\Services Reader\obj\x86\Debug\Services Reader.csproj.GenerateResource.Cache
+D:\Programming\Projects\Microsoft\Visual Studio 2010\Projects\Services Reader\Services Reader\obj\x86\Debug\Services Reader.exe
+D:\Programming\Projects\Microsoft\Visual Studio 2010\Projects\Services Reader\Services Reader\obj\x86\Debug\Services Reader.pdb
