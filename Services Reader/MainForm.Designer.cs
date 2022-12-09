@@ -1,4 +1,4 @@
-﻿namespace Services_Reader
+﻿namespace ServicesReader
 {
     partial class MainForm
     {
@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.lvMain = new System.Windows.Forms.ListView();
             this.chDisplayName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chServiceName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chStartupType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.miSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.miDeselectAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSelectInvert = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.miCheckAll = new System.Windows.Forms.ToolStripMenuItem();
             this.miUncheckAll = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,6 +68,8 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.info = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.chbDescription = new System.Windows.Forms.CheckBox();
             this.contextMenuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -81,13 +83,14 @@
             this.lvMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.chDisplayName,
             this.chServiceName,
-            this.chStartupType});
+            this.chStartupType,
+            this.chDescription});
             this.lvMain.ContextMenuStrip = this.contextMenuStrip;
             this.lvMain.FullRowSelect = true;
-            this.lvMain.Location = new System.Drawing.Point(12, 12);
+            this.lvMain.Location = new System.Drawing.Point(12, 44);
             this.lvMain.Name = "lvMain";
-            this.lvMain.Size = new System.Drawing.Size(625, 525);
-            this.lvMain.TabIndex = 1;
+            this.lvMain.Size = new System.Drawing.Size(760, 469);
+            this.lvMain.TabIndex = 0;
             this.lvMain.UseCompatibleStateImageBehavior = false;
             this.lvMain.View = System.Windows.Forms.View.Details;
             this.lvMain.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lvMain_ColumnClick);
@@ -95,24 +98,29 @@
             // chDisplayName
             // 
             this.chDisplayName.Text = "Display Name";
-            this.chDisplayName.Width = 300;
+            this.chDisplayName.Width = 375;
             // 
             // chServiceName
             // 
             this.chServiceName.Text = "Service Name";
-            this.chServiceName.Width = 200;
+            this.chServiceName.Width = 250;
             // 
             // chStartupType
             // 
             this.chStartupType.Text = "Startup Type";
             this.chStartupType.Width = 100;
             // 
+            // chDescription
+            // 
+            this.chDescription.Text = "Description";
+            this.chDescription.Width = 0;
+            // 
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miSelectAll,
             this.miDeselectAll,
-            this.toolStripMenuItem1,
+            this.miSelectInvert,
             this.toolStripSeparator1,
             this.miCheckAll,
             this.miUncheckAll,
@@ -127,7 +135,7 @@
             this.miChkManual,
             this.miChkUnknown});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(263, 308);
+            this.contextMenuStrip.Size = new System.Drawing.Size(263, 330);
             // 
             // miSelectAll
             // 
@@ -144,12 +152,12 @@
             this.miDeselectAll.Text = "Deselect All";
             this.miDeselectAll.Click += new System.EventHandler(this.miDeselectAll_Click);
             // 
-            // toolStripMenuItem1
+            // miSelectInvert
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(262, 22);
-            this.toolStripMenuItem1.Text = "Invert Selection";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.miSelectInvert.Name = "miSelectInvert";
+            this.miSelectInvert.Size = new System.Drawing.Size(262, 22);
+            this.miSelectInvert.Text = "Invert Selection";
+            this.miSelectInvert.Click += new System.EventHandler(this.miSelectInvert_Click);
             // 
             // toolStripSeparator1
             // 
@@ -255,7 +263,7 @@
             this.lUnknownCount});
             this.statusStrip.Location = new System.Drawing.Point(0, 540);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(770, 22);
+            this.statusStrip.Size = new System.Drawing.Size(784, 22);
             this.statusStrip.TabIndex = 4;
             // 
             // lServicesName
@@ -337,23 +345,23 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.Location = new System.Drawing.Point(643, 12);
+            this.btnRefresh.AccessibleDescription = "";
+            this.btnRefresh.Location = new System.Drawing.Point(12, 8);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(115, 25);
-            this.btnRefresh.TabIndex = 2;
-            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Size = new System.Drawing.Size(30, 30);
+            this.btnRefresh.TabIndex = 1;
+            this.toolTip.SetToolTip(this.btnRefresh, "Refresh");
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnGenerate
             // 
             this.btnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerate.Location = new System.Drawing.Point(643, 43);
+            this.btnGenerate.Location = new System.Drawing.Point(742, 8);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(115, 25);
+            this.btnGenerate.Size = new System.Drawing.Size(30, 30);
             this.btnGenerate.TabIndex = 3;
-            this.btnGenerate.Text = "Generate *.cmd";
+            this.toolTip.SetToolTip(this.btnGenerate, "Generate CMD file");
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
@@ -362,28 +370,39 @@
             this.info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.info.AutoSize = true;
             this.info.Enabled = false;
-            this.info.Location = new System.Drawing.Point(652, 524);
+            this.info.Location = new System.Drawing.Point(645, 525);
             this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(106, 13);
+            this.info.Size = new System.Drawing.Size(136, 13);
             this.info.TabIndex = 2579;
-            this.info.Text = "Daniel Swan © 2017";
+            this.info.Text = "Daniel Swan © 2017, 2022";
             // 
             // saveFileDialog
             // 
             this.saveFileDialog.Filter = "Windows Command Script (*.cmd)|*.cmd|All files (*.*)|*.*";
             // 
+            // chbDescription
+            // 
+            this.chbDescription.AutoSize = true;
+            this.chbDescription.Location = new System.Drawing.Point(57, 16);
+            this.chbDescription.Name = "chbDescription";
+            this.chbDescription.Size = new System.Drawing.Size(107, 17);
+            this.chbDescription.TabIndex = 2;
+            this.chbDescription.Text = "Show description";
+            this.chbDescription.UseVisualStyleBackColor = true;
+            this.chbDescription.CheckedChanged += new System.EventHandler(this.chbDescription_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 562);
+            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.chbDescription);
             this.Controls.Add(this.info);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.lvMain);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(786, 600);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VIN: Services Reader";
@@ -422,7 +441,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem miSelectAll;
         private System.Windows.Forms.ToolStripMenuItem miDeselectAll;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem miSelectInvert;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem miCheckAll;
         private System.Windows.Forms.ToolStripMenuItem miUncheckAll;
@@ -436,6 +455,9 @@
         private System.Windows.Forms.ToolStripMenuItem miChkDisabled;
         private System.Windows.Forms.ToolStripMenuItem miChkManual;
         private System.Windows.Forms.ToolStripMenuItem miChkUnknown;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ColumnHeader chDescription;
+        private System.Windows.Forms.CheckBox chbDescription;
 
 
 

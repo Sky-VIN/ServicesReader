@@ -6,7 +6,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Services_Reader
+namespace ServicesReader
 {
     internal static class ListViewExtensions
     {

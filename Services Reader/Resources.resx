@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -114,4 +117,70 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FileHead" xml:space="preserve">
+    <value>@echo off
+CLS
+
+@echo.
+@echo 	Script created: {0}
+@echo.
+@echo 	- - - - - - - - - - - - - - - - - -
+@echo.
+@echo 	All Services: {1}
+@echo.
+@echo 	Automatic (Delayed Start): {2}
+@echo 	Automatic: {3}
+@echo 	Manual: {4}
+@echo 	Disabled: {5}
+@echo 	Unknown: {6}
+@echo.
+@echo 	- - - - - - - - - - - - - - - - - -
+@echo.
+pause</value>
+  </data>
+  <data name="FileSelect" xml:space="preserve">
+    <value>/select, "{0}"</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MainIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\MainIcon.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\RefreshImage.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RestartQuestion" xml:space="preserve">
+    <value>choice /M "Do you want restart copmuter"
+
+if errorlevel 2 goto END
+if errorlevel 1 goto RESTART
+
+:RESTART
+shutdown -r -t 00
+goto END
+
+:END</value>
+  </data>
+  <data name="SaveImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SaveImage.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SuccessMessage" xml:space="preserve">
+    <value>File {0} created successfully! :)
+
+Do you want open folder location?</value>
+  </data>
+  <data name="Type_Auto" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="Type_AutoDelayed" xml:space="preserve">
+    <value>Automatic (Delayed Start)</value>
+  </data>
+  <data name="Type_Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Type_Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="Type_Unknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
 </root>
