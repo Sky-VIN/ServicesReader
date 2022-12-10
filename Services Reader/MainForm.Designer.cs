@@ -135,7 +135,7 @@
             this.miChkManual,
             this.miChkUnknown});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(263, 330);
+            this.contextMenuStrip.Size = new System.Drawing.Size(263, 308);
             // 
             // miSelectAll
             // 
@@ -274,67 +274,72 @@
             // 
             // lServicesCount
             // 
-            this.lServicesCount.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lServicesCount.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
             this.lServicesCount.Name = "lServicesCount";
-            this.lServicesCount.Size = new System.Drawing.Size(17, 17);
+            this.lServicesCount.Size = new System.Drawing.Size(13, 17);
             this.lServicesCount.Text = "0";
             // 
             // lAutomaticDelayedName
             // 
+            this.lAutomaticDelayedName.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.lAutomaticDelayedName.Name = "lAutomaticDelayedName";
-            this.lAutomaticDelayedName.Size = new System.Drawing.Size(139, 17);
+            this.lAutomaticDelayedName.Size = new System.Drawing.Size(143, 17);
             this.lAutomaticDelayedName.Text = "Automatic (Delayed Start):";
             // 
             // lAutomaticDelayedCount
             // 
-            this.lAutomaticDelayedCount.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lAutomaticDelayedCount.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
             this.lAutomaticDelayedCount.Name = "lAutomaticDelayedCount";
-            this.lAutomaticDelayedCount.Size = new System.Drawing.Size(17, 17);
+            this.lAutomaticDelayedCount.Size = new System.Drawing.Size(13, 17);
             this.lAutomaticDelayedCount.Text = "0";
             // 
             // lAutomaticName
             // 
+            this.lAutomaticName.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.lAutomaticName.Name = "lAutomaticName";
-            this.lAutomaticName.Size = new System.Drawing.Size(62, 17);
+            this.lAutomaticName.Size = new System.Drawing.Size(66, 17);
             this.lAutomaticName.Text = "Automatic:";
             // 
             // lAutomaticCount
             // 
-            this.lAutomaticCount.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lAutomaticCount.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
             this.lAutomaticCount.Name = "lAutomaticCount";
-            this.lAutomaticCount.Size = new System.Drawing.Size(17, 17);
+            this.lAutomaticCount.Size = new System.Drawing.Size(13, 17);
             this.lAutomaticCount.Text = "0";
             // 
             // lManualName
             // 
+            this.lManualName.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.lManualName.Name = "lManualName";
-            this.lManualName.Size = new System.Drawing.Size(49, 17);
+            this.lManualName.Size = new System.Drawing.Size(53, 17);
             this.lManualName.Text = "Manual:";
             // 
             // lManualCount
             // 
-            this.lManualCount.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lManualCount.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
             this.lManualCount.Name = "lManualCount";
-            this.lManualCount.Size = new System.Drawing.Size(17, 17);
+            this.lManualCount.Size = new System.Drawing.Size(13, 17);
             this.lManualCount.Text = "0";
             // 
             // lDisabledName
             // 
+            this.lDisabledName.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.lDisabledName.Name = "lDisabledName";
-            this.lDisabledName.Size = new System.Drawing.Size(55, 17);
+            this.lDisabledName.Size = new System.Drawing.Size(59, 17);
             this.lDisabledName.Text = "Disabled:";
             // 
             // lDisabledCount
             // 
-            this.lDisabledCount.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.lDisabledCount.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
             this.lDisabledCount.Name = "lDisabledCount";
-            this.lDisabledCount.Size = new System.Drawing.Size(17, 17);
+            this.lDisabledCount.Size = new System.Drawing.Size(13, 17);
             this.lDisabledCount.Text = "0";
             // 
             // lUnknownName
             // 
+            this.lUnknownName.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.lUnknownName.Name = "lUnknownName";
-            this.lUnknownName.Size = new System.Drawing.Size(61, 17);
+            this.lUnknownName.Size = new System.Drawing.Size(65, 17);
             this.lUnknownName.Text = "Unknown:";
             // 
             // lUnknownCount
